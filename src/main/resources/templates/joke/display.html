@@ -3,8 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Chuck Norris Joke</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+
+        html,
+        body {
+            margin: 0;
+        }
+
+        .banner {
+            background: #009579;
+        }
+
+        .banner__content {
+            padding: 16px;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .banner__text {
+            flex-grow: 1;
+            line-height: 1.4;
+            font-family: "Quicksand", sans-serif;
+        }
+
+        .banner__close {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .banner__text,
+        .banner__close > span {
+            color: #ffffff;
+        }
+
+    </style>
 </head>
 <body>
-<h1 th:text="${joke}"></h1>
+    <div class="banner">
+        <div class="banner__content">
+            <div class="banner__text">
+                <strong th:text="${joke}">It is a joke.</strong>
+            </div>
+            <button class="banner__close" type="button">
+            <span class="material-icons">
+            refresh
+            </span>
+            </button>
+        </div>
+    </div>
+    <script>
+
+        document.querySelector(".banner__close").addEventListener("click", function () {
+            document.location.reload(true);
+        });
+
+    </script>
 </body>
 </html>
