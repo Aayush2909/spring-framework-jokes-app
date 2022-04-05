@@ -22,7 +22,7 @@ public class JokeController {
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String getChuckNorrisJoke(Model model) {
 
-        model.addAttribute("joke", getRandomJoke());
+        model.addAttribute("joke", jokeService.getJoke());
 
         return "joke/display";
     }
